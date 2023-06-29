@@ -1,0 +1,122 @@
+<div class="card">
+    <div class="title-container">
+        <h2>የእቃ ወይም የንብረት ገቢ ደረሰኝ</h2>
+        <h3>RECEIPT FOR ARTICLES OR PROPERTY RECEIVED</h3><br><br>
+    </div>
+    <form class="example-form">
+        <div class="first-row">
+            <div class="form-field">
+                <label for="item">ንብረቱን ገቢ ያደረገው ድርጅት</label>
+                <input type="text" id="item" placeholder="ንብረቱን ገቢ ያደረገው ድርጅት" required>
+            </div>
+            <div class="form-field">
+                <label for="type">ዋና ክፍል</label>
+                <input type="text" id="type" placeholder="ዋና ክፍል" required>
+            </div>
+            <div class="form-field">
+                <label for="serial">ሲርያል ቁጥር</label>
+                <input type="text" id="serial" placeholder="ሲርያል ቁጥር" required>
+            </div>
+        </div>
+        <div class="first-row">
+            <div class="form-field">
+                <label for="receiver-name">ለእቃው የተሰጠው መደብ</label>
+                <input type="text" id="receiver-name" placeholder="ለእቃው የተሰጠው መደብ" required>
+            </div>
+            <div class="form-field">
+                <label for="receiver-id">እቃው የሚቀመጥበት መጋዘን ቁጥር</label>
+                <input type="number" id="receiver-id" placeholder="እቃው የሚቀመጥበት መጋዘን ቁጥር" required>
+            </div>
+            <div class="form-field">
+                <label for="owner-id">የመደርደሪያ ቁጥር</label>
+                <input type="number" id="owner-id" placeholder="የመደርደሪያ ቁጥር" required>
+            </div>
+        </div>
+        <div class="first-row">
+            <div class="form-field">
+                <label for="receiver-parent">ተረካቢ ስም</label>
+                <input type="text" id="receiver-parent" placeholder="ተረካቢ ስም" required>
+            </div>
+            <div class="form-field">
+                <label for="receiver-father">አባት ስም</label>
+                <input type="text" id="receiver-father" placeholder="አባት ስም" required>
+            </div>
+            <div class="form-field">
+                <label for="receiver-mother">የአያት ስም</label>
+                <input type="text" id="receiver-mother" placeholder="የአያት ስም" required>
+            </div>
+        </div>
+        <div class="first-row">
+            <div class="form-field">
+                <label for="issuer-name">አስረካቢ ስም</label>
+                <input type="text" id="issuer-name" placeholder="አስረካቢ ስም" required>
+            </div>
+            <div class="form-field">
+                <label for="issuer-father">አባት ስም</label>
+                <input type="text" id="issuer-father" placeholder="አባት ስም" required>
+            </div>
+            <div class="form-field">
+                <label for="mother-name">የአያት ስም</label>
+                <input type="text" id="mother-name" placeholder="የአያት ስም" required>
+            </div>
+        </div>
+        <fieldset class="my-table">
+            <legend>table</legend>
+            <div *ngFor="let row of formRows" class="form-row">
+              <div class="first-row">
+                <div class="form-field">
+                  <label [for]="'received-by-' + row">{{ labels['received-by'] }}</label>
+                  <input type="text" [id]="'received-by-' + row" [placeholder]="placeholders['received-by']" required>
+                </div>
+                <div class="form-field">
+                  <label [for]="'property-list-' + row">{{ labels['property-list'] }}</label>
+                  <input type="text" [id]="'property-list-' + row" [placeholder]="placeholders['property-list']" required>
+                </div>
+                <div class="form-field">
+                  <label [for]="'mobile-' + row">{{ labels['mobile'] }}</label>
+                  <input type="text" [id]="'mobile-' + row" [placeholder]="placeholders['mobile']" required>
+                </div>
+              </div>
+              <div class="first-row">
+                <div class="form-field">
+                  <label [for]="'address-' + row">{{ labels['address'] }}</label>
+                  <input type="text" [id]="'address-' + row" [placeholder]="placeholders['address']" required>
+                </div>
+                <div class="form-field">
+                  <label [for]="'additional-info-' + row">{{ labels['additional-info'] }}</label>
+                  <input type="text" [id]="'additional-info-' + row" [placeholder]="placeholders['additional-info']" required>
+                </div>
+              </div>
+              <div class="first-row">
+                <div class="form-field">
+                  <label [for]="'quantity-' + row">{{ labels['quantity'] }}</label>
+                  <input type="number" [id]="'quantity-' + row" [placeholder]="placeholders['quantity']" required>
+                  <hr>
+                </div>
+                <div class="form-field">
+                  <label [for]="'unit-price-' + row">{{ labels['unit-price'] }}</label>
+                  <input type="number" [id]="'unit-price-' + row" [placeholder]="placeholders['unit-price']" required>
+                  <hr>
+                </div>
+                <div class="form-field">
+                  <label [for]="'total-price-' + row">{{ labels['total-price'] }}</label>
+                  <input type="number" [id]="'total-price-' + row" [placeholder]="placeholders['total-price']" required>
+                  <hr>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <button (click)="addNewRow()">+</button>
+          
+
+
+
+        <br>
+        <div class="form-field">
+            <label for="owner-id">ጠቅላላ</label>
+            <input type="number" id="owner-id" placeholder="ጠቅላላ" required>
+        </div>
+        <br>
+        <button type="submit" class="submit-button">እቃ መመዝገብ</button>
+    </form>
+</div>

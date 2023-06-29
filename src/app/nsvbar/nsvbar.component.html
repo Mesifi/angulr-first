@@ -1,0 +1,63 @@
+<mat-toolbar color="black" class="mat-elevation-z8">
+    <ng-container authorized>
+      <button mat-button routerLink="/home">ዳሽ ቦርድ</button>
+  
+      <!-- User Management Menu -->
+      <button mat-button [matMenuTriggerFor]="usermanagement">የተጠቃሚ አስተዳደር
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu #usermanagement="matMenu">
+        <button mat-menu-item routerLink="/register">Register</button>
+        <button mat-menu-item routerLink="/login"> login </button>
+      </mat-menu>
+  
+      <!-- Inventory Menu -->
+      <button mat-button [matMenuTriggerFor]="inventory">የንብረት አስተዳደር
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu #inventory="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="fixed">ቋሚ ንብረት</button>
+        <button mat-menu-item [matMenuTriggerFor]="movable">አላቂ ንብረት</button>
+      </mat-menu>
+      <mat-menu #fixed="matMenu">
+        <button mat-menu-item routerLink="/storeproperty">ገቢ ንብረት</button>
+        <button mat-menu-item routerLink="/removedproperty">ወጪ ንብረት</button>
+        <button mat-menu-item routerLink="/propertytransfer">የንብረት ማስተላለፊያ</button>
+        <button mat-menu-item routerLink="/propertyremove">የንብረት ማስወገጃ</button>
+      </mat-menu>
+      <mat-menu #movable="matMenu">
+        <button mat-menu-item routerLink="/storeproperty">ገቢ ንብረት</button>
+        <button mat-menu-item routerLink="/removedproperty">ወጪ ንብረት</button>
+        <button mat-menu-item routerLink="/propertytransfer">የንብረት ማስተላለፊያ</button>
+        <button mat-menu-item routerLink="/propertyremove">የንብረት ማስወገጃ</button>
+      </mat-menu>
+  
+      <!-- Weapon Menu -->
+      <button mat-button [matMenuTriggerFor]="weapon">የመሳሪያ ቁጥጥር
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu #weapon="matMenu">
+        <button mat-menu-item routerLink="/individual">በግል</button>
+        <button mat-menu-item routerLink="/company">በመስሪያ ቤት</button>
+      </mat-menu>
+  
+      <!-- Fol Menu -->
+      <button mat-button [matMenuTriggerFor]="fol">ነዘቅ
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu #fol="matMenu">
+        <button mat-menu-item routerLink="/component-name">መረከቢያ </button>
+        <button mat-menu-item routerLink="/home">ወጪ</button>
+      </mat-menu>
+  
+      <!-- Vector Menu -->
+      <button mat-button [matMenuTriggerFor]="vec">የተሽከርካሪ
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu #vec="matMenu">
+        <button mat-menu-item routerLink="/angular">መረከቢያ </button>
+        <button mat-menu-item routerLink="/cources">ወጪ</button>
+      </mat-menu>
+  
+    </ng-container>
+  </mat-toolbar>

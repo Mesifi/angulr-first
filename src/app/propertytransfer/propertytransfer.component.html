@@ -1,0 +1,171 @@
+<div class="container">
+    <div class="title">
+        <div class="header">የቋሚ ንብረት ማስተላለፊያ ቅጽ</div>
+        <div class="header">Fixed Asset Transformation Form</div>
+    </div>
+    <form>
+        <div class="content">
+            <div class="left-text">
+
+
+
+                <p>ንብረት ያስተላለፈው ተጠቃሚ</p>
+                <p>asset transferred from Rome number</p>
+                <br><br>
+
+                <p>ስም</p>
+
+                <div class="form-section">
+                    <label for="transferred-from"> name</label>
+                    <input type="text" id="transferred-from" name="transferred-from">
+                </div>
+
+                <p>ቅጥር ግቢ</p>
+
+                <div class="form-section">
+                    <label for="transferred-from">premises</label>
+                    <input type="text" id="transferred-from" name="transferred-from">
+
+                </div>
+                <p>ዋና ክፍል</p>
+
+                <div class="form-section">
+                    <label for="transferred-from">department</label>
+                    <input type="text" id="transferred-from" name="transferred-from">
+                </div>
+                <p>ህንጻ ቁጥ</p>
+
+                <div class="form-section">
+                    <label for="transferred-from">building number</label>
+                    <input type="number" id="transferred-from" name="transferred-from">
+                </div>
+                <p>ቢሮ ቁጥር</p>
+
+                <div class="form-section">
+                    <label for="transferred-from">Rome number</label>
+                    <input type="number" id="transferred-from" name="transferred-from">
+                </div>
+
+                <div class="form-section">
+                    <label for="transferred-from">የተጠቃሚው ቁጥር</label>
+                    <input type="number" id="transferred-from" name="transferred-from">
+                </div>
+            </div>
+            <div class="right-text">
+                <p>ንብረት ያስተላለፈው ተጠቃሚ</p>
+                <p>asset transferred to</p>
+                <br><br>
+                <p>ስም</p>
+
+                <div class="form-section">
+                    <label for="transferred-from">name</label>
+                    <input type="text" id="transferred-from" name="transferred-from">
+                </div>
+                <p>ቅጥር ግቢ</p>
+
+                <div class="form-section">
+                    <label for="transferred-from">premises</label>
+                    <input type="text" id="transferred-from" name="transferred-from">
+                </div>
+                <p>ዋና ክፍል</p>
+
+                <div class="form-section">
+                    <label for="transferred-from">department</label>
+                    <input type="text" id="transferred-from" name="transferred-from">
+                </div>
+                <p>ህንጻ ቁጥ</p>
+
+                <div class="form-section">
+                    <label for="transferred-from">building number</label>
+                    <input type="number" id="transferred-from" name="transferred-from">
+                </div>
+                <p>ቢሮ ቁጥር</p>
+
+                <div class="form-section">
+                    <label for="transferred-from">Rome number</label>
+                    <input type="number" id="transferred-from" name="transferred-from">
+                </div>
+
+                <div class="form-section">
+                    <label for="transferred-from">የተጠቃሚው ቁጥር</label>
+                    <input type="number" id="transferred-from" name="transferred-from">
+                </div>
+            </div>
+        </div>
+    </form>
+    <fieldset class="my-table">
+        <legend>table</legend>
+        <div *ngFor="let row of formRows" class="form-row">
+          <div class="first-row">
+            
+            <div class="form-field">
+              <label [for]="'property-list-' + row">{{ labels['property-list'] }}</label>
+              <label [for]="'property-list-' + row">{{ label['property-list'] }}</label>
+              <input type="text" [id]="'property-list-' + row" [placeholder]="placeholders['property-list']" required>
+            </div>
+            <div class="form-field">
+              <label [for]="'mobile-' + row">{{ labels['mobile'] }}</label>
+              <label [for]="'mobile-' + row">{{ label['mobile'] }}</label>
+              <input type="text" [id]="'mobile-' + row" [placeholder]="placeholders['mobile']" required>
+            </div>
+          </div>
+          <div class="first-row">
+            <div class="form-field">
+              <label [for]="'address-' + row">{{ labels['address'] }}</label> 
+              <label [for]="'address-' + row">{{ label['address'] }}</label>
+              <input type="text" [id]="'address-' + row" [placeholder]="placeholders['address']" required>
+            </div>
+            <div class="form-field">
+              <label [for]="'additional-info-' + row">{{ labels['additional-info'] }}</label>
+              <label [for]="'additional-info-' + row">{{ label['additional-info'] }}</label>
+              <input type="text" [id]="'additional-info-' + row" [placeholder]="placeholders['additional-info']" required>
+            </div>
+          </div>
+          <div class="first-row">
+            <div class="form-field">
+              <label [for]="'quantity-' + row">{{ labels['quantity'] }}</label>
+              <label [for]="'quantity-' + row">{{ label['quantity'] }}</label>
+              <input type="number" [id]="'quantity-' + row" [placeholder]="placeholders['quantity']" required>
+              <hr>
+            </div>
+            <div class="form-field">
+              <label [for]="'unit-price-' + row">{{ labels['unit-price'] }}</label>
+              <label [for]="'unit-price-' + row">{{ label['unit-price'] }}</label>
+              <input type="number" [id]="'unit-price-' + row" [placeholder]="placeholders['unit-price']" required>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <button (click)="addNewRow()">+</button>
+    <form>
+        <p>የተላለፈበት ምክንያት:</p>
+        <p>transactin reason</p>
+
+        <div class="form-section">
+            <textarea type="text" id="transferred-from" rows="4" cols="50" name="transferred-from"></textarea>
+        </div>
+        <p>ታዛቢ:</p>
+        <p>see</p>
+
+        <div class="form-section">
+            <textarea type="text" id="transferred-from" rows="4" cols="50" name="transferred-from"></textarea>
+        </div>
+
+        <div class="form-section">
+            <p>የፋሙ ሀላረፊ:</p>
+            <p>administerator</p>
+            <textarea type="text" id="my textarea" rows="4" cols="50" name="transferred-from"> </textarea>
+        </div>
+
+        <div class="form-group">
+
+            <label for="date">day:</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        <button type="submit" class="submit-button">እቃ መመዝገብ</button>
+
+    </form>
+
+
+</div>

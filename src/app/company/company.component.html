@@ -1,0 +1,24 @@
+<fieldset class="my-table">
+  <legend>table</legend>
+  <div *ngFor="let row of formRows; let rowIndex = index" class="form-row">
+    <div class="first-row">
+      <div *ngFor="let field of fields.slice(0, 4)" class="form-field"
+        style="border: 2px solid black; padding: 10px; border-radius: 4px; display: flex; justify-content: space-between;">
+        <label [for]="getFieldId(rowIndex, field.id)">{{ field.label }}</label>
+        <input type="text" [id]="getFieldId(rowIndex, field.id)" [placeholder]="field.placeholder" required>
+      </div>
+    </div>
+
+    <div class="second-row">
+      <div>
+        <div *ngFor="let field of fields.slice(4)" class="form-field"
+          style="border: 2px solid black; padding: 10px; border-radius: 4px; display: flex; justify-content: space-between;">
+          <label [for]="getFieldId(rowIndex, field.id)">{{ field.label }}</label>
+          <input type="text" [id]="getFieldId(rowIndex, field.id)" [placeholder]="field.placeholder" required>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</fieldset>
+<button (click)="addNewRow()">+</button>

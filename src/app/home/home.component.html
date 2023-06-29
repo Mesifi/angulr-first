@@ -1,0 +1,68 @@
+
+    <div class="ooo">
+      
+     <app-pie-chart></app-pie-chart>
+     <app-graph></app-graph>
+    </div>
+    
+
+    
+  
+  <main>
+    <section>
+      <h2>Dashboard Overview</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>ጠቅላላ ተጠቃሚ</h3>
+          <p>{{ totalUsers }}</p>
+        </div>
+        <div class="card">
+          <h3>ጠቅላላ ሽያጭ</h3>
+          <p>{{ totalSales }}</p>
+        </div>
+      </div>
+    </section>
+  
+    <section>
+      <h2>ወጪ ንብረት</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ንብረት</th>
+            <th>ዋጋ</th>
+            <th>ቀን</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sale of latestSales">
+            <td>{{ sale.product }}</td>
+            <td>{{ sale.price }}</td>
+            <td>{{ sale.date }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h2>ገቢ ንብረት</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ንብረት</th>
+            <th>ዋጋ</th>
+            <th>ቀን</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sale of latestSales">
+            <td>{{ sale.product }}</td>
+            <td>{{ sale.price }}</td>
+            <td>{{ sale.date }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; {{ currentYear }} My Dashboard. All rights reserved.</p>
+  </footer>
